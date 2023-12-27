@@ -11,7 +11,17 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>2</initValue>
+      <initValue>5</initValue>
       <name>TIMEOUT_Loading</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'userFake3'</initValue>
+      <name>USERNAME</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Oto123456'</initValue>
+      <name>PASSWORD</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>
