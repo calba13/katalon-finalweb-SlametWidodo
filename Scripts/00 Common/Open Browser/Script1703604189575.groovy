@@ -19,15 +19,5 @@ import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 WebUI.openBrowser(GlobalVariable.BASEURL)
 
 'STEP : MaxsizeWindows'
-WebUI.maximizeWindow()
-
-WebUI.click(findTestObject('00 Navigasi/Nav-User'))
-
-WebUI.click(findTestObject('01 Homepage/Form Login/chbox_rememberMe'))
-
-WebUI.click(findTestObject('01 Homepage/Form Login/btn_CREATE NEW ACCOUNT'))
-
-WebUI.delay(5)
-
-WebUI.scrollToPosition(0, 450)
+not_run: WebUI.maximizeWindow()
 
