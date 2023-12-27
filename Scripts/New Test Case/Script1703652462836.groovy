@@ -27,3 +27,5 @@ not_run: WebUI.click(findTestObject('00 Navigasi/Nav-Search'))
 
 WebUI.callTestCase(findTestCase('TC-Search/TC-Search Item'), [:], FailureHandling.STOP_ON_FAILURE)
 
+WebUI.callTestCase(findTestCase('TC-Search/TC-Verifikasi Item Search'), [:], FailureHandling.STOP_ON_FAILURE)
+
