@@ -31,14 +31,14 @@
       <name>keywordCategory</name>
    </variable>
    <variable>
-      <defaultValue>'HP STREAM - 11-D020NR'</defaultValue>
+      <defaultValue>'HP STREAM - 11-D020NR Laptop'</defaultValue>
       <description></description>
       <id>2727a757-3142-4267-a762-a8bb75d85221</id>
       <masked>false</masked>
       <name>productName</name>
    </variable>
    <variable>
-      <defaultValue>3</defaultValue>
+      <defaultValue>'3'</defaultValue>
       <description></description>
       <id>42888e57-d550-4ebf-b1c0-f3df18bba158</id>
       <masked>false</masked>

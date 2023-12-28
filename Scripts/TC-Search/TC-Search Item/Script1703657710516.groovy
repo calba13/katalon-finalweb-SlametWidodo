@@ -7,3 +7,4 @@ WebUI.click(findTestObject('00 Navigasi/Nav-Search'))
 'STEP : Input Keyword'
 //WebUI.sendKeys(findTestObject('00 Navigasi/subNavbar-Search/inp_SearchKeyword'), keywordSearch)
 CustomKeywords.'finalProjectKW.searchFeature.typeKeywordWithDuration'(keywordSearch)
+

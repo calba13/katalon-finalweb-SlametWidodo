@@ -7,9 +7,6 @@ import com.kms.katalon.core.util.KeywordUtil
 import groovy.json.JsonSlurper
 
 public class common {
-
-
-
 	@Keyword
 	def cetak(def msg) {
 		KeywordUtil.logInfo("(DO-->*) ${msg}")
