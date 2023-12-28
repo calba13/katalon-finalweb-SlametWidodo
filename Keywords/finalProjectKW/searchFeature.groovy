@@ -53,11 +53,16 @@ public class searchFeature {
 				dataExpected << productItems.get(i).getText()
 			}
 
+
+
 			/* end
 			 * --------------------------------------------------------------------------------------------------------------------------------------*/
 
 
 			WebUI.click(findTestObject('00 Navigasi/subNavbar-Search/link_View_All'))
+			WebUI.delay(GlobalVariable.TIMEOUT_Loading)
+			WebUI.takeScreenshot()
+			WebUI.delay(GlobalVariable.TIMEOUT_Loading)
 			WebUI.click(findTestObject('00 Navigasi/subNavbar-Search/btn_Close Input Search'))
 
 
@@ -68,7 +73,7 @@ public class searchFeature {
 			List<WebElement> productItemsONScreenSearch = listProductONScreenSearch.findElements(By.xpath("//p/a[@class='productName ng-binding']"))
 			int TotalData = productItemsONScreenSearch.size()
 			new customKW.common().cetak("TotalData : ${TotalData}");
-			
+
 			List<String> dataResultSearch = []
 			for (int i = 0; i < TotalData; i++) {
 				dataResultSearch << productItemsONScreenSearch.get(i).getText()
@@ -82,7 +87,7 @@ public class searchFeature {
 			String total = WebUI.getText(findTestObject('Object Repository/02 Search/lbl_Total Product yang di temukan'))
 			String[] stringArray = total.split(" ")
 			int expectedTotal = Integer.parseInt(stringArray[0])
-			
+
 			new customKW.common().cetak("dataResultSearch : ${dataResultSearch}");
 
 			// VERIFIKASI : List Product
@@ -141,27 +146,27 @@ public class searchFeature {
 
 			WebUI.click(findTestObject('00 Navigasi/subNavbar-Search/link_View_All'))
 			WebUI.click(findTestObject('00 Navigasi/subNavbar-Search/btn_Close Input Search'))
-		
+
 			WebDriver driver = DriverFactory.getWebDriver()
 			WebElement listProductONScreenSearch = driver.findElement(By.xpath("//div[@class='cell categoryRight']/ul/li"))
 			List<WebElement> productItemsONScreenSearch = listProductONScreenSearch.findElements(By.xpath("//p/a[@class='productName ng-binding']"))
 			int TotalData = productItemsONScreenSearch.size()
 			new customKW.common().cetak("TotalData : ${TotalData}");
-			
+
 			'SELECT PRODUCT - HANDLING'
 			for (int i = 0; i < TotalData; i++) {
-				
+
 				new customKW.common().cetak("dataResultSearchAtas : ${productName} | ${productItemsONScreenSearch.get(i).getText()}");
-				
+
 				if (productName.equalsIgnoreCase(productItemsONScreenSearch.get(i).getText())) {
 					new customKW.common().cetak("dataResultSearchDalem : ${productItemsONScreenSearch.get(i).getText()}");
 					productItemsONScreenSearch.get(i).click()
 				}
 			}
 
-			
+
 			'ADD QUANTITY - HANDLING'
-//			WebUI.waitForElementVisible(findTestObject('Object Repository/03 Product Detail/btn_Plus_Quantity'), 10)
+			//			WebUI.waitForElementVisible(findTestObject('Object Repository/03 Product Detail/btn_Plus_Quantity'), 10)
 			int quantity = Integer.parseInt(qty)
 			if(quantity != 1 && quantity > 0) {
 				for(int i=1; i < quantity; i++) {
@@ -172,18 +177,16 @@ public class searchFeature {
 
 			// WebUI.delay(GlobalVariable.TIMEOUT_Loading)
 			WebUI.click(findTestObject('Object Repository/03 Product Detail/btn_ADD TO CART'))
-			
+
 			WebUI.takeScreenshot()
-			
+
 			WebUI.click(findTestObject('Object Repository/01 Homepage/LOGO'))
 			WebUI.delay(GlobalVariable.TIMEOUT_Loading)
-			
+
 			defaultVar["messageList"] << ["message" : "TestCase : ${tcTitle}"]
 			defaultVar["messageList"] << ["message" : "DataBinding : ${productName} | qty : ${qty}"]
 			defaultVar["messageList"] << ["message" : "QC STATUS : GOOD"]
 			defaultVar["messageList"] << ["message" : ""]
-			
-			
 		} catch (Exception e) {
 
 			defaultVar["isSuccess"] = false;
@@ -226,9 +229,11 @@ public class searchFeature {
 					List<WebElement> Columns_row = rows_table.get(row).findElements(By.tagName('td'))
 
 					'Verify Quantity DataBinding VS Table Value'
-					boolean found = assertThat(allTestData[i].productName.equalsIgnoreCase(Columns_row.get(1).getText()))
-					if(found) {
-						'Verify Quantity DataBinding VS Table Value'
+					String productName = allTestData[i].productName
+
+
+					if (productName.equalsIgnoreCase(Columns_row.get(1).getText())) {
+
 						assertThat(allTestData[i].quantity.equals(Integer.parseInt(Columns_row.get(4).getText())))
 
 						'JIKA salah 1 Data Binding ada yangtidak Sesuai, maka Semua FLow dianggap NG'
@@ -241,6 +246,7 @@ public class searchFeature {
 						defaultVar["messageList"] << ["message" : "quantity : ${Columns_row.get(4).getText()} | expected : ${allTestData[i].quantity} "]
 						defaultVar["messageList"] << ["message" : "QC STATUS : GOOD"]
 						defaultVar["messageList"] << ["message" : ""]
+						
 					} else {
 
 						defaultVar["isSuccess"] = false;
@@ -250,6 +256,33 @@ public class searchFeature {
 						defaultVar["messageList"] << ["message" : "QC STATUS : NOT GOOD"]
 						defaultVar["messageList"] << ["message" : ""]
 					}
+
+					//
+					//
+					//					boolean found = assertThat(allTestData[i].productName.equalsIgnoreCase(Columns_row.get(1).getText()))
+					//					if(found) {
+					//						'Verify Quantity DataBinding VS Table Value'
+					//						assertThat(allTestData[i].quantity.equals(Integer.parseInt(Columns_row.get(4).getText())))
+					//
+					//						'JIKA salah 1 Data Binding ada yangtidak Sesuai, maka Semua FLow dianggap NG'
+					//						if (!defaultVar["isSuccess"]) {
+					//							defaultVar["isSuccess"] = false;
+					//						}
+					//
+					//						defaultVar["messageList"] << ["message" : "TestCase : ${tcTitle}"]
+					//						defaultVar["messageList"] << ["message" : "ProductName : ${Columns_row.get(1).getText()} | expected : ${allTestData[i].productName} "]
+					//						defaultVar["messageList"] << ["message" : "quantity : ${Columns_row.get(4).getText()} | expected : ${allTestData[i].quantity} "]
+					//						defaultVar["messageList"] << ["message" : "QC STATUS : GOOD"]
+					//						defaultVar["messageList"] << ["message" : ""]
+					//					} else {
+					//
+					//						defaultVar["isSuccess"] = false;
+					//						defaultVar["messageList"] << ["message" : "TestCase : ${tcTitle}"]
+					//						defaultVar["messageList"] << ["message" : "ProductName : ${Columns_row.get(1).getText()} | expected : ${allTestData[i].productName} "]
+					//						defaultVar["messageList"] << ["message" : "quantity : ${Columns_row.get(4).getText()} | expected : ${allTestData[i].quantity} "]
+					//						defaultVar["messageList"] << ["message" : "QC STATUS : NOT GOOD"]
+					//						defaultVar["messageList"] << ["message" : ""]
+					//					}
 				}
 			}
 		} catch (Exception e) {

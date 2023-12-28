@@ -21,9 +21,9 @@ WebUI.callTestCase(findTestCase('00 Common/Open Browser'), [:], FailureHandling.
 
 WebUI.callTestCase(findTestCase('TC-Login/TC-Login'), [('username') : 'userFake3', ('password') : 'Oto123456'], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('TC-Search/TC-Search Item'), [:], FailureHandling.STOP_ON_FAILURE)
+not_run: WebUI.callTestCase(findTestCase('TC-Search/TC-Search Item'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.callTestCase(findTestCase('TC-Search/TC-Verifikasi Item Search'), [:], FailureHandling.STOP_ON_FAILURE)
+not_run: WebUI.callTestCase(findTestCase('TC-Search/TC-Verifikasi Item Search'), [:], FailureHandling.STOP_ON_FAILURE)
 
 not_run: WebUI.callTestCase(findTestCase('TC-Logout/TC-Logout'), [:], FailureHandling.STOP_ON_FAILURE)
 

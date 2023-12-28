@@ -5,5 +5,5 @@ import internal.GlobalVariable as GlobalVariable
 WebUI.openBrowser(GlobalVariable.BASEURL)
 
 'STEP : MaxsizeWindows'
-not_run: WebUI.maximizeWindow()
+WebUI.maximizeWindow()
 
