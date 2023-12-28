@@ -230,73 +230,32 @@ public class searchFeature {
 
 					new customKW.common().cetak("productName :  ${allTestData[i].productName} | ${Columns_row.get(1).getText()}");
 					if (allTestData[i].productName.equalsIgnoreCase(Columns_row.get(1).getText())) {
-						
+
 						new customKW.common().cetak("IN - productName :  ${allTestData[i].productName} | ${Columns_row.get(1).getText()}");
-						
+
 						if (allTestData[i].quantity.equalsIgnoreCase(Columns_row.get(4).getText())) {
-							
+
 							defaultVar["messageList"] << ["message" : "TestCase : ${tcTitle}"]
 							defaultVar["messageList"] << ["message" : "ProductName : ${Columns_row.get(1).getText()} | expected : ${allTestData[i].productName} "]
 							defaultVar["messageList"] << ["message" : "quantity : ${Columns_row.get(4).getText()} | expected : ${allTestData[i].quantity} "]
 							defaultVar["messageList"] << ["message" : "QC STATUS : GOOD"]
 							defaultVar["messageList"] << ["message" : ""]
-							
 						} else {
-							
+
 							defaultVar["isSuccess"] = false;
 							defaultVar["messageList"] << ["message" : "TestCase : ${tcTitle}"]
 							defaultVar["messageList"] << ["message" : "ProductName : ${Columns_row.get(1).getText()} | expected : ${allTestData[i].productName} "]
 							defaultVar["messageList"] << ["message" : "quantity : ${Columns_row.get(4).getText()} | expected : ${allTestData[i].quantity} "]
 							defaultVar["messageList"] << ["message" : "QC STATUS : NOT GOOD"]
 							defaultVar["messageList"] << ["message" : ""]
-							
 						}
-						
+
 
 						'JIKA salah 1 Data Binding ada yangtidak Sesuai, maka Semua FLow dianggap NG'
 						if (!defaultVar["isSuccess"]) {
 							defaultVar["isSuccess"] = false;
 						}
-
-						
-						
-					} 
-//					else {
-//
-//						defaultVar["isSuccess"] = false;
-//						defaultVar["messageList"] << ["message" : "TestCase : ${tcTitle}"]
-//						defaultVar["messageList"] << ["message" : "ProductName : ${Columns_row.get(1).getText()} | expected : ${allTestData[i].productName} "]
-//						defaultVar["messageList"] << ["message" : "quantity : ${Columns_row.get(4).getText()} | expected : ${allTestData[i].quantity} "]
-//						defaultVar["messageList"] << ["message" : "QC STATUS : NOT GOOD"]
-//						defaultVar["messageList"] << ["message" : ""]
-//					}
-
-					//
-					//
-					//					boolean found = assertThat(allTestData[i].productName.equalsIgnoreCase(Columns_row.get(1).getText()))
-					//					if(found) {
-					//						'Verify Quantity DataBinding VS Table Value'
-					//						assertThat(allTestData[i].quantity.equals(Integer.parseInt(Columns_row.get(4).getText())))
-					//
-					//						'JIKA salah 1 Data Binding ada yangtidak Sesuai, maka Semua FLow dianggap NG'
-					//						if (!defaultVar["isSuccess"]) {
-					//							defaultVar["isSuccess"] = false;
-					//						}
-					//
-					//						defaultVar["messageList"] << ["message" : "TestCase : ${tcTitle}"]
-					//						defaultVar["messageList"] << ["message" : "ProductName : ${Columns_row.get(1).getText()} | expected : ${allTestData[i].productName} "]
-					//						defaultVar["messageList"] << ["message" : "quantity : ${Columns_row.get(4).getText()} | expected : ${allTestData[i].quantity} "]
-					//						defaultVar["messageList"] << ["message" : "QC STATUS : GOOD"]
-					//						defaultVar["messageList"] << ["message" : ""]
-					//					} else {
-					//
-					//						defaultVar["isSuccess"] = false;
-					//						defaultVar["messageList"] << ["message" : "TestCase : ${tcTitle}"]
-					//						defaultVar["messageList"] << ["message" : "ProductName : ${Columns_row.get(1).getText()} | expected : ${allTestData[i].productName} "]
-					//						defaultVar["messageList"] << ["message" : "quantity : ${Columns_row.get(4).getText()} | expected : ${allTestData[i].quantity} "]
-					//						defaultVar["messageList"] << ["message" : "QC STATUS : NOT GOOD"]
-					//						defaultVar["messageList"] << ["message" : ""]
-					//					}
+					}
 				}
 			}
 		} catch (Exception e) {
