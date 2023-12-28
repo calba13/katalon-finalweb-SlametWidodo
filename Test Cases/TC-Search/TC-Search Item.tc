@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC-Search Item</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>1ef91831-0e80-4d26-b365-f9cb507eacbb</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>4e7be0e7-7de4-4fef-8e65-1d7799a3c2e8</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'lapto'</defaultValue>
+      <description></description>
+      <id>4e7be0e7-7de4-4fef-8e65-1d7799a3c2e8</id>
+      <masked>false</masked>
+      <name>keywordSearch</name>
+   </variable>
+</TestCaseEntity>
