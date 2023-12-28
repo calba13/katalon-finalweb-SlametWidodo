@@ -18,14 +18,14 @@
       <variableId>613eb99d-01a2-454b-91dd-23e4def58140</variableId>
    </variableLinks>
    <variable>
-      <defaultValue>'userFake3'</defaultValue>
+      <defaultValue>GlobalVariable.USERNAME</defaultValue>
       <description></description>
       <id>cc9d38da-eaec-4328-b81d-9723559f37d7</id>
       <masked>false</masked>
       <name>username</name>
    </variable>
    <variable>
-      <defaultValue>'Oto123456'</defaultValue>
+      <defaultValue>GlobalVariable.PASSWORD</defaultValue>
       <description></description>
       <id>613eb99d-01a2-454b-91dd-23e4def58140</id>
       <masked>false</masked>

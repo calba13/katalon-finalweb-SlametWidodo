@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC-Add Item Product</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>b87a73a5-47c3-40a2-8878-2bff270e9773</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>8d12ae8b-ef84-4c1a-bb0f-61e6d1c10863</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>2727a757-3142-4267-a762-a8bb75d85221</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>42888e57-d550-4ebf-b1c0-f3df18bba158</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>'laptop'</defaultValue>
+      <description></description>
+      <id>8d12ae8b-ef84-4c1a-bb0f-61e6d1c10863</id>
+      <masked>false</masked>
+      <name>keywordCategory</name>
+   </variable>
+   <variable>
+      <defaultValue>'HP STREAM - 11-D020NR Laptop'</defaultValue>
+      <description></description>
+      <id>2727a757-3142-4267-a762-a8bb75d85221</id>
+      <masked>false</masked>
+      <name>productName</name>
+   </variable>
+   <variable>
+      <defaultValue>'3'</defaultValue>
+      <description></description>
+      <id>42888e57-d550-4ebf-b1c0-f3df18bba158</id>
+      <masked>false</masked>
+      <name>quantity</name>
+   </variable>
+</TestCaseEntity>

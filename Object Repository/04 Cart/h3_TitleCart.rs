@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>h3_TitleCart</name>
+   <tag></tag>
+   <elementGuidId>5afbbb2f-d7ed-4ace-adf2-f18e9b3b5a40</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//section/article[@class='sp']/h3</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//section/article[@class='sp']/h3</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//section/article[@class='sp']/h3</value>
+      <webElementGuid>1b759eaf-94e2-4b6c-a372-17de928590ce</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>
